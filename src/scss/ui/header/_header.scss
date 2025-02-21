@@ -1,0 +1,78 @@
+@use "../../base/variables" as v;
+@use "sass:color";
+
+.cabecera {
+  background: v.$c-principal;
+}
+
+.dn {
+  display: none;
+  opacity: 0;
+  &:checked ~ .menu {
+    left: 0;
+  }
+  &:checked + label {
+    &::before {
+      content: "Cerrar";
+    }
+  }
+}
+.header {
+  padding: 0 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4em;
+}
+
+.page__title {
+  color: #fff;
+}
+
+.page_home {
+  text-decoration: none;
+  color: #fff;
+}
+.btn_menu {
+  display: none;
+  cursor: pointer;
+  color: #fff;
+  &::before {
+    display: table;
+    content: "Menú";
+  }
+  @media screen and (max-width: 640px) {
+    display: block;
+  }
+}
+.menu {
+  display: flex;
+  flex-direction: row;
+  &__item {
+    padding: 0.5em 1em;
+    margin: 0 0.5em;
+    color: #fff;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: color 0.5s;
+    transition-timing-function: cubic-bezier(0.17, 0.67, 0.56, 0.95);
+    &:hover {
+      color: color.adjust(v.$c-principal, $lightness: 10%);
+    }
+  }
+  @media screen and (max-width: 640px) {
+    position: fixed;
+    flex-direction: column;
+    top: 0;
+    padding-top: 4em;
+    left: -70%;
+    height: 100vh;
+    background: v.$c-principal;
+    width: 70%;
+    transition: all 0.3s;
+    &__item {
+      padding: 1em 0;
+      border-bottom: 1px solid rgba(#000, 0.2);
+    }
+  }
+}

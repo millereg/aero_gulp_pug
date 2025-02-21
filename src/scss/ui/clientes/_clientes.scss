@@ -1,0 +1,46 @@
+@use "../../base/variables" as v;
+
+.clientes {
+  margin: 1em;
+  &__title {
+    margin: 2em 0 1em;
+    text-align: center;
+  }
+  &__comentarios {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.comentario {
+  margin: 1em 0;
+  background: v.$c-principal;
+  display: flex;
+  padding: 1em;
+  &__persona {
+    display: flex;
+    width: 100px;
+    flex-direction: column;
+    &__imagen {
+      border-radius: 50px;
+      margin-bottom: 0.5em;
+    }
+    &__nombre {
+      text-align: center;
+      color: #fff;
+    }
+  }
+  &__contenido {
+    margin-left: 2em;
+    .stars {
+      display: flex;
+      margin-bottom: 1em;
+      .star {
+        width: 25px;
+      }
+    }
+    .text {
+      color: #fff;
+    }
+  }
+}

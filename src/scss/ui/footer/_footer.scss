@@ -1,0 +1,19 @@
+.foo {
+  background: #272727;
+}
+.footer {
+  width: 100%;
+  color: #95989a;
+//   height: 10em;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  &__name {
+    text-transform: uppercase;
+  }
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+  }
+}

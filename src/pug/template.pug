@@ -1,0 +1,25 @@
+doctype html
+html(lang="es")
+    block config
+        include config/config.pug
+    head
+        block head
+            meta(charset="UTF-8")
+            meta(name="viewport" content="width=device-width, initial-scale=1.0")
+            title= page_title + " | " + page
+            each link in css
+                link(rel="stylesheet", href= "css/" + link)
+    body
+        block header
+            include components/header.pug
+        block banner
+            picture
+                source(type="image/webp" srcset="img/banners/" + pagina_actual + ".webp")
+                source(type="image/avif" srcset="img/banners/" + pagina_actual + ".avif")
+                img.banner__img(src="img/banners/" + pagina_actual + ".jpg" alt="Imagen Banner")
+        block nosotros
+        block destinos_elegidos
+        block clientes
+        block contacto
+        block footer
+            include components/footer.pug

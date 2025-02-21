@@ -1,0 +1,49 @@
+extends pug/template.pug
+block append config
+    - pagina_actual = "inicio"
+
+block nosotros
+    .max.nos
+        .nosotros
+            each item in nosotros
+                .nosotros__item
+                    img(src="img/" + item.img, alt=item.alt)
+                    h1.nosotros__title= item.titulo
+                    p.nosotros__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit consequuntur voluptatum corrupti vitae iure animi quo excepturi atque ipsa sint debitis ea, ab corporis perferendis vel natus totam, officia at.
+                    a.nosotros__button(href="#")= item.boton + " " + item.alt
+
+
+block destinos_elegidos
+    .max
+        .destinos_elegidos
+            h1.destinos__title LOS DESTINOS MAS ELEGIDOS
+            - for (var i = 1; i <= 3; i++)
+                .destinos__item
+                    picture
+                        source(type="image/webp" srcset="img/destinos/destino" + i + ".webp")
+                        source(type="image/avif" srcset="img/destinos/destino" + i + ".avif")
+                        img.destinos__img(src="img/destinos/destino" + i + ".jpg" alt="Imagen de destino " + i)
+                    .destinos__item__description
+                        h1.destinos__item__title LOREM IPSUM DOLOR.
+                        p.destinos__item__text Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut maxime sapiente nisi tempora amet autem at fugiat totam non id culpa exercitationem quod odio mollitia inventore, consequatur provident pariatur vitae!
+                        a.destinos__button(href="#") Comprar
+
+
+block clientes
+    .max
+        .clientes
+            h1.clientes__title NUESTROS CLIENTES
+            .clientes__comentarios
+                - for (let i = 0; i < 3; i ++)
+                    .comentario
+                        .comentario__persona
+                            picture
+                                source(type="image/webp" srcset="img/clientes/face.webp")
+                                source(type="image/avif" srcset="img/clientes/face.avif")
+                                img.comentario__persona__imagen(src="img/clientes/face.jpg" alt="Usuario")
+                            p.comentario__persona__nombre Miller Espinoza
+                        .comentario__contenido
+                            .stars
+                                - for(let i = 0; i < 4; i++)
+                                    img.star(src="img/star.svg" alt="Estrella")
+                            p.text Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, enim magnam unde ab sit possimus mollitia molestias hic? In ipsam assumenda nemo omnis dolores aperiam at dolore voluptatum sequi perferendis.
